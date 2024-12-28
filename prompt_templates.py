@@ -22,3 +22,11 @@ Now, answer the following question:
 {prompt}
 Answer:
 """.strip()
+
+def prepare_prompt(data):
+    # Extract the necessary fields from the input data
+    question = data['question']
+
+    final_prompt = multiple_choice_template.format(prompt=f"Q: {question}\nA) {data['A']}\nB) {data['B']}\nC) {data['C']}\nD) {data['D']}")
+    
+    return final_prompt
